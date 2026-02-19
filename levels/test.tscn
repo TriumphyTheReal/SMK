@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://by2uwue8i8pnp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6g5uc"]
+
+[sub_resource type="Sky" id="Sky_ivwug"]
+sky_material = SubResource("ProceduralSkyMaterial_6g5uc")
+
+[sub_resource type="Environment" id="Environment_l5pxq"]
+background_mode = 2
+background_color = Color(0.2139, 0.570975, 0.69, 1)
+sky = SubResource("Sky_ivwug")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfdnw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_72lju"]
+
+[node name="Node3d" type="Node3D" unique_id=986221074]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1440686357]
+environment = SubResource("Environment_l5pxq")
+
+[node name="Player" parent="." unique_id=280989931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="DirectionalLight3d" type="DirectionalLight3D" parent="." unique_id=1227933051]
+transform = Transform3D(0.966349, 0.250904, -0.0567091, 0.182362, -0.512743, 0.838951, 0.181419, -0.821061, -0.541244, -0.00693703, 59.5145, -109.348)
+light_energy = 1.232
+light_indirect_energy = 0.884
+light_volumetric_fog_energy = 0.768
+shadow_enabled = true
+
+[node name="SpawnMenuUI" parent="." unique_id=1215977661]
+
+[node name="ContraptionBodys" type="Node3D" parent="." unique_id=1843999460]
+
+[node name="WorldBoundry" parent="." unique_id=1749502708]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=228333306]
+transform = Transform3D(3.5608106, 0, 0, 0, 0.2393558, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=721588885]
+shape = SubResource("BoxShape3D_nfdnw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1400932675]
+transform = Transform3D(2.1999283, 0, 0, 0, 1, 0, 0, 0, 5.987173, 0, 0, 0)
+mesh = SubResource("BoxMesh_72lju")
